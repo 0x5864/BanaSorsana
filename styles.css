@@ -1959,7 +1959,7 @@ main > * {
 
 .top-city-card {
   appearance: none;
-  border: 1px solid #ff0000;
+  border: 1px solid #b8c8dc;
   border-radius: 4px;
   background: inherit;
   color: var(--box-text);

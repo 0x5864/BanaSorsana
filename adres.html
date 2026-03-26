@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="İl, ilçe, mahalle, sokak, kapı ve daire bilgilerini seçerek UAVT adres kodunu sorgula."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260326-17" />
+  </head>
+  <body class="address-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <span>Adres</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="address-shell" aria-label="Adres kodu sorgulama alanı">
+        <div class="address-panel">
+          <div class="address-panel-head">
+            <h2>Adres bilgilerini seç</h2>
+            <p>Alanlar yukarıdan aşağıya açılır. Önce ili seç, kalan alanlar buna göre yüklensin.</p>
+          </div>
+
+          <form class="address-form" autocomplete="off" form-uavt>
+            <div class="address-grid">
+              <label class="address-field">
+                <span>İl</span>
+                <select name="İl" province-select disabled>
+                  <option value="" selected>İl Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field">
+                <span>İlçe</span>
+                <select name="İlçe" district-select disabled>
+                  <option value="" selected>İlçe Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field">
+                <span>Bucak / Köy</span>
+                <select name="Bucak/Köy" town-select disabled>
+                  <option value="" selected>Bucak/Köy Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field">
+                <span>Mahalle</span>
+                <select name="Mahalle" neighborhood-select disabled>
+                  <option value="" selected>Mahalle Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field">
+                <span>Sokak</span>
+                <select name="Sokak" street-select disabled>
+                  <option value="" selected>Sokak Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field">
+                <span>Kapı Numarası</span>
+                <select name="Kapı Numarası" building-select disabled>
+                  <option value="" selected>Kapı Numarası Seçiniz</option>
+                </select>
+              </label>
+
+              <label class="address-field address-field-full">
+                <span>Daire Numarası</span>
+                <select name="Daire Numarası" flat-select disabled>
+                  <option value="" selected>Daire Numarası Seçiniz</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="address-actions">
+              <button class="address-submit" type="submit" submit-button>
+                <span button-text>Sorgula</span>
+                <span class="address-submit-loader" button-loader hidden></span>
+              </button>
+            </div>
+          </form>
+
+          <p class="address-warning" uavt-warning hidden>
+            Gönderilen bilgiler için aktif kayıt bulunmamaktadır.
+          </p>
+        </div>
+
+        <section class="address-result-card">
+          <p class="address-result-label">Adres kodu (UAVT)</p>
+          <div class="address-result-value" result-value>0</div>
+          <div class="address-postal-box">
+            <p class="address-postal-label">Posta Kodu</p>
+            <div class="address-postal-value" postal-code-value>-</div>
+          </div>
+          <div class="address-result-box -hidden" calculation-result>
+            <p class="address-result-title">Sonuç hazır</p>
+            <p class="address-result-copy">
+              Seçtiğin daire için bulunan kod burada gösterilir. Bu kod DASK işlemlerinde istenebilir.
+            </p>
+          </div>
+          <div class="address-selection" selected-path>
+            Henüz tam adres seçilmedi.
+          </div>
+        </section>
+
+        <aside class="address-side-column">
+          <section class="address-district-card">
+            <p class="address-result-label">İlçe Bul</p>
+            <form class="address-district-form" district-form>
+              <label class="address-lookup-field">
+                <span>İl adı</span>
+                <select name="province_name" district-province-input>
+                  <option value="" selected>İl Seçiniz</option>
+                  <option value="ADANA">ADANA</option>
+                  <option value="ADIYAMAN">ADIYAMAN</option>
+                  <option value="AFYONKARAHİSAR">AFYONKARAHİSAR</option>
+                  <option value="AĞRI">AĞRI</option>
+                  <option value="AKSARAY">AKSARAY</option>
+                  <option value="AMASYA">AMASYA</option>
+                  <option value="ANKARA">ANKARA</option>
+                  <option value="ANTALYA">ANTALYA</option>
+                  <option value="ARDAHAN">ARDAHAN</option>
+                  <option value="ARTVİN">ARTVİN</option>
+                  <option value="AYDIN">AYDIN</option>
+                  <option value="BALIKESİR">BALIKESİR</option>
+                  <option value="BARTIN">BARTIN</option>
+                  <option value="BATMAN">BATMAN</option>
+                  <option value="BAYBURT">BAYBURT</option>
+                  <option value="BİLECİK">BİLECİK</option>
+                  <option value="BİNGÖL">BİNGÖL</option>
+                  <option value="BİTLİS">BİTLİS</option>
+                  <option value="BOLU">BOLU</option>
+                  <option value="BURDUR">BURDUR</option>
+                  <option value="BURSA">BURSA</option>
+                  <option value="ÇANAKKALE">ÇANAKKALE</option>
+                  <option value="ÇANKIRI">ÇANKIRI</option>
+                  <option value="ÇORUM">ÇORUM</option>
+                  <option value="DENİZLİ">DENİZLİ</option>
+                  <option value="DİYARBAKIR">DİYARBAKIR</option>
+                  <option value="DÜZCE">DÜZCE</option>
+                  <option value="EDİRNE">EDİRNE</option>
+                  <option value="ELAZIĞ">ELAZIĞ</option>
+                  <option value="ERZİNCAN">ERZİNCAN</option>
+                  <option value="ERZURUM">ERZURUM</option>
+                  <option value="ESKİŞEHİR">ESKİŞEHİR</option>
+                  <option value="GAZİANTEP">GAZİANTEP</option>
+                  <option value="GİRESUN">GİRESUN</option>
+                  <option value="GÜMÜŞHANE">GÜMÜŞHANE</option>
+                  <option value="HAKKARİ">HAKKARİ</option>
+                  <option value="HATAY">HATAY</option>
+                  <option value="IĞDIR">IĞDIR</option>
+                  <option value="ISPARTA">ISPARTA</option>
+                  <option value="İSTANBUL">İSTANBUL</option>
+                  <option value="İZMİR">İZMİR</option>
+                  <option value="KAHRAMANMARAŞ">KAHRAMANMARAŞ</option>
+                  <option value="KARABÜK">KARABÜK</option>
+                  <option value="KARAMAN">KARAMAN</option>
+                  <option value="KARS">KARS</option>
+                  <option value="KASTAMONU">KASTAMONU</option>
+                  <option value="KAYSERİ">KAYSERİ</option>
+                  <option value="KIRIKKALE">KIRIKKALE</option>
+                  <option value="KIRKLARELİ">KIRKLARELİ</option>
+                  <option value="KIRŞEHİR">KIRŞEHİR</option>
+                  <option value="KİLİS">KİLİS</option>
+                  <option value="KOCAELİ">KOCAELİ</option>
+                  <option value="KONYA">KONYA</option>
+                  <option value="KÜTAHYA">KÜTAHYA</option>
+                  <option value="MALATYA">MALATYA</option>
+                  <option value="MANİSA">MANİSA</option>
+                  <option value="MARDİN">MARDİN</option>
+                  <option value="MERSİN">MERSİN</option>
+                  <option value="MUĞLA">MUĞLA</option>
+                  <option value="MUŞ">MUŞ</option>
+                  <option value="NEVŞEHİR">NEVŞEHİR</option>
+                  <option value="NİĞDE">NİĞDE</option>
+                  <option value="ORDU">ORDU</option>
+                  <option value="OSMANİYE">OSMANİYE</option>
+                  <option value="RİZE">RİZE</option>
+                  <option value="SAKARYA">SAKARYA</option>
+                  <option value="SAMSUN">SAMSUN</option>
+                  <option value="SİİRT">SİİRT</option>
+                  <option value="SİNOP">SİNOP</option>
+                  <option value="SİVAS">SİVAS</option>
+                  <option value="ŞANLIURFA">ŞANLIURFA</option>
+                  <option value="ŞIRNAK">ŞIRNAK</option>
+                  <option value="TEKİRDAĞ">TEKİRDAĞ</option>
+                  <option value="TOKAT">TOKAT</option>
+                  <option value="TRABZON">TRABZON</option>
+                  <option value="TUNCELİ">TUNCELİ</option>
+                  <option value="UŞAK">UŞAK</option>
+                  <option value="VAN">VAN</option>
+                  <option value="YALOVA">YALOVA</option>
+                  <option value="YOZGAT">YOZGAT</option>
+                  <option value="ZONGULDAK">ZONGULDAK</option>
+                </select>
+              </label>
+              <label class="address-lookup-field">
+                <span>Mahalle adı</span>
+                <input
+                  type="text"
+                  name="neighborhood_name"
+                  placeholder="Önce İl Seçiniz"
+                  autocomplete="off"
+                  list="districtNeighborhoodOptions"
+                  district-neighborhood-input
+                  disabled
+                />
+                <datalist id="districtNeighborhoodOptions" district-neighborhood-list></datalist>
+              </label>
+              <button class="address-submit address-submit-compact" type="submit" district-submit-button>
+                <span district-button-text>İlçe bul</span>
+                <span class="address-submit-loader" district-button-loader hidden></span>
+              </button>
+            </form>
+            <p class="address-district-hint">
+              İl ve mahalle bilgisi ile eşleşen ilçe kayıtlarını bulur.
+            </p>
+            <div class="address-district-output" district-output>
+              Henüz sorgu yapılmadı.
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner">
+        <div class="yr-footer-grid">
+          <section class="yr-footer-col">
+            <h4>aramabul'u indir!</h4>
+            <a class="store-badge" href="#" aria-label="App Store">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">App Store</span>
+            </a>
+            <a class="store-badge" href="#" aria-label="Google Play">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">Google Play</span>
+            </a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>aramabul'u keşfet</h4>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="yer-ekle.html">Yer ekle</a>
+            <a href="iletisim.html">İletişim</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Yardım mı lazım?</h4>
+            <a href="sss.html">Sıkça Sorulan Sorular</a>
+            <a href="cerez-politikasi.html">Çerez Politikası</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Kurumsal</h4>
+            <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+            <a href="kvkk.html">Kişisel Verilerin Korunması</a>
+            <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+          </section>
+        </div>
+
+        <div class="yr-footer-bottom">
+          <p>© 2026 aramabul</p>
+          <div class="yr-footer-social" aria-label="Sosyal">
+            <a href="#" aria-label="Instagram">○</a>
+            <a href="#" aria-label="Ara">◌</a>
+            <a href="#" aria-label="Dünya">◍</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="adres.js?v=20260326-11"></script>
+  </body>
+</html>

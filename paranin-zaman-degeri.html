@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Paranın zaman değeri aracıyla bugünkü değer, gelecek değer ve dönemsel ödeme hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260326-63" />
+  </head>
+  <body class="credit-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"
+            ><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span
+          >
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <span>Paranın Zaman Değeri</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout tvm-layout" aria-label="Paranın zaman değeri hesaplama alanı">
+        <section class="credit-card">
+          <div class="credit-main">
+            <div class="converter-mini-head">
+              <p class="converter-mini-label">Paranın Zaman Değeri</p>
+            </div>
+
+            <div class="converter-mini-grid credit-form">
+              <label class="converter-field">
+                <span>Hesaplanacak alan</span>
+                <select data-tvm-target>
+                  <option value="fv" selected>Gelecek değer (FV)</option>
+                  <option value="pv">Bugünkü değer (PV)</option>
+                  <option value="pmt">Dönemsel ödeme (PMT)</option>
+                </select>
+              </label>
+              <label class="converter-field">
+                <span>Ödeme zamanı</span>
+                <select data-tvm-payment-timing>
+                  <option value="end" selected>Dönem sonu</option>
+                  <option value="begin">Dönem başı</option>
+                </select>
+              </label>
+              <label class="converter-field">
+                <span>Bugünkü değer (PV)</span>
+                <input type="text" inputmode="decimal" value="100.000,00" placeholder="Örnek: 100.000,00" data-tvm-pv />
+              </label>
+              <label class="converter-field">
+                <span>Gelecek değer (FV)</span>
+                <input type="text" inputmode="decimal" value="-" placeholder="Otomatik hesaplanır" data-tvm-fv />
+              </label>
+              <label class="converter-field">
+                <span>Dönemsel ödeme (PMT)</span>
+                <input type="text" inputmode="decimal" value="2.500,00" placeholder="Örnek: 2.500,00" data-tvm-pmt />
+              </label>
+              <label class="converter-field">
+                <span>Faiz oranı (% / dönem)</span>
+                <input type="text" inputmode="decimal" value="1,20" placeholder="Örnek: 1,20" data-tvm-rate />
+              </label>
+              <label class="converter-field">
+                <span>Dönem sayısı</span>
+                <input type="number" min="1" step="1" value="24" data-tvm-periods />
+              </label>
+            </div>
+
+            <div class="converter-mini-actions">
+              <button class="converter-submit" type="button" data-tvm-calculate>Hesapla</button>
+            </div>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card tvm-result-card">
+              <span class="credit-result-label" data-tvm-result-label>Gelecek değer (FV)</span>
+              <strong class="credit-result-value" data-tvm-result-value>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Bileşik büyüme katsayısı</span>
+              <strong class="credit-result-value" data-tvm-growth>1,00x</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Toplam dönemsel katkı</span>
+              <strong class="credit-result-value" data-tvm-total-payments>0,00</strong>
+            </article>
+          </aside>
+
+        </section>
+      </section>
+    </main>
+
+    <script src="paranin-zaman-degeri.js?v=20260326-63"></script>
+  </body>
+</html>

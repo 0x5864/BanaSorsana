@@ -3,6 +3,9 @@ const converterModalTriggers = document.querySelectorAll("[data-home-converter-t
 const converterModalClosers = document.querySelectorAll("[data-home-converter-close]");
 const converterModalCard = document.querySelector(".home-weight-card[data-converter-card]");
 const converterModalTitle = document.querySelector("[data-home-converter-title]");
+const financialModal = document.querySelector("[data-home-financial-modal]");
+const financialModalTriggers = document.querySelectorAll("[data-home-financial-trigger]");
+const financialModalClosers = document.querySelectorAll("[data-home-financial-close]");
 
 function setConverterModal(open) {
   if (!converterModal) {
@@ -11,6 +14,16 @@ function setConverterModal(open) {
 
   converterModal.hidden = !open;
   converterModal.classList.toggle("is-open", open);
+  document.body.classList.toggle("modal-open", open);
+}
+
+function setFinancialModal(open) {
+  if (!financialModal) {
+    return;
+  }
+
+  financialModal.hidden = !open;
+  financialModal.classList.toggle("is-open", open);
   document.body.classList.toggle("modal-open", open);
 }
 
@@ -49,6 +62,27 @@ if (converterModal && converterModalTriggers.length) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && converterModal.classList.contains("is-open")) {
       setConverterModal(false);
+    }
+  });
+}
+
+if (financialModal && financialModalTriggers.length) {
+  financialModalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      setFinancialModal(true);
+    });
+  });
+
+  financialModalClosers.forEach((closer) => {
+    closer.addEventListener("click", () => {
+      setFinancialModal(false);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && financialModal.classList.contains("is-open")) {
+      setFinancialModal(false);
     }
   });
 }

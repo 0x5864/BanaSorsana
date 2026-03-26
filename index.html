@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260326-39" />
+    <link rel="stylesheet" href="styles.css?v=20260326-42" />
   </head>
   <body class="home-page">
     <div class="texture"></div>
@@ -49,6 +49,22 @@
         <a class="top-city-card category-home-card" href="adres.html" aria-label="Adres kategorisinde ara">
           <span class="top-city-content">
             <span class="top-city-name">Adres</span>
+          </span>
+        </a>
+
+        <a class="top-city-card category-home-card" href="kredi.html" aria-label="Kredi Hesaplama sayfasını aç">
+          <span class="top-city-content">
+            <span class="top-city-name">Kredi Hesaplama</span>
+          </span>
+        </a>
+
+        <a
+          class="top-city-card category-home-card"
+          href="paranin-zaman-degeri.html"
+          aria-label="Paranın Zaman Değeri sayfasını aç"
+        >
+          <span class="top-city-content">
+            <span class="top-city-name">Paranın Zaman Değeri</span>
           </span>
         </a>
 
@@ -293,6 +309,93 @@
       </div>
     </div>
 
+    <div class="home-financial-modal" data-home-financial-modal hidden>
+      <div class="home-weight-backdrop" data-home-financial-close></div>
+      <div
+        class="home-financial-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="homeFinancialModalTitle"
+      >
+        <button class="home-weight-close" type="button" aria-label="Kapat" data-home-financial-close>
+          ×
+        </button>
+
+        <section class="home-financial-card">
+          <div class="home-financial-head">
+            <p class="converter-mini-label" id="homeFinancialModalTitle">Finansal Hesaplayıcılar</p>
+            <p class="home-financial-copy">
+              Calkoo’daki finansal araçları tek kart altında topladım. Bu alan, hızlı erişim için
+              konu başlıklarına göre düzenlendi.
+            </p>
+          </div>
+
+          <div class="home-financial-grid">
+            <section class="home-financial-section">
+              <h3>Kredi ve Birikim</h3>
+              <ul>
+                <li>
+                  <a class="home-financial-item-link" href="kredi.html">
+                    Kapsamlı Kredi Hesaplama
+                  </a>
+                </li>
+                <li>Kapsamlı Tasarruf Hesaplama</li>
+                <li>Vadeli Mevduat Hesaplama</li>
+                <li>Faiz Oranı Değişikliği</li>
+              </ul>
+            </section>
+
+            <section class="home-financial-section">
+              <h3>Yatırım ve Değerleme</h3>
+              <ul>
+                <li>
+                  <a class="home-financial-item-link" href="paranin-zaman-degeri.html">
+                    Paranın Zaman Değeri
+                  </a>
+                </li>
+                <li>Yatırım Getirisi (ROI)</li>
+                <li>İndirgenmiş Nakit Akımı Modeli</li>
+                <li>İç Verim Oranı</li>
+                <li>Vadeye Kadar Olan Verim</li>
+                <li>Kar Payı İskontolama Modeli</li>
+                <li>CAPM</li>
+                <li>Firmanın Serbest Nakit Akışı (FCFF)</li>
+              </ul>
+            </section>
+
+            <section class="home-financial-section">
+              <h3>Şirket ve Karlılık</h3>
+              <ul>
+                <li>Finansal Rasyolar</li>
+                <li>İşletme Kaldıraç</li>
+                <li>Fiyat Kazanç Oranı (P/E)</li>
+                <li>Özkaynak Karlılığı (Dupont Analizi)</li>
+                <li>Kara Geçiş Noktası</li>
+              </ul>
+            </section>
+
+            <section class="home-financial-section">
+              <h3>Vergi ve Oranlar</h3>
+              <ul>
+                <li>Katma Değer Vergisi</li>
+                <li>Yüzde Hesaplama</li>
+                <li>Zaman Takibi ve Saat Ücreti</li>
+              </ul>
+            </section>
+          </div>
+
+          <a
+            class="home-financial-link"
+            href="https://www.calkoo.com/tr/finansal-hesaplayicilar"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Kaynağı aç
+          </a>
+        </section>
+      </div>
+    </div>
+
     <footer class="yr-footer" aria-label="Alt Bant">
       <div class="yr-footer-inner">
         <div class="yr-footer-grid">
@@ -340,6 +443,6 @@
       </div>
     </footer>
     <script src="donusturucu.js?v=20260326-29"></script>
-    <script src="home.js?v=20260326-33"></script>
+    <script src="home.js?v=20260326-42"></script>
   </body>
 </html>

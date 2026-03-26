@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260326-29" />
+    <link rel="stylesheet" href="styles.css?v=20260326-39" />
   </head>
   <body class="converter-page">
     <div class="texture"></div>
@@ -376,6 +376,34 @@
           </div>
         </section>
 
+        <section class="converter-mini-card" id="speed" data-converter-card data-category="speed">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Hız</p>
+          </div>
+          <div class="converter-mini-grid">
+            <label class="converter-field">
+              <span>Miktar</span>
+              <input type="text" inputmode="decimal" value="1" placeholder="Örnek: 12,5" data-amount />
+            </label>
+            <label class="converter-field">
+              <span>Kaynak</span>
+              <select data-from></select>
+            </label>
+            <label class="converter-field">
+              <span>Hedef</span>
+              <select data-to></select>
+            </label>
+          </div>
+          <div class="converter-mini-actions">
+            <button class="converter-submit converter-submit-compact" type="button" data-swap>Yer değiştir</button>
+          </div>
+          <div class="converter-mini-result">
+            <div class="converter-result-value" data-result-value>3,6</div>
+            <p class="converter-result-unit" data-result-unit>Kilometre / saat (km/h)</p>
+            <p class="converter-result-meta" data-summary>1 Metre / saniye (m/s) = 3,6 Kilometre / saat (km/h)</p>
+          </div>
+        </section>
+
         <section class="converter-mini-card" data-converter-card data-category="density">
           <div class="converter-mini-head">
             <p class="converter-mini-label">Yoğunluk</p>
@@ -481,6 +509,6 @@
       </div>
     </footer>
 
-    <script src="donusturucu.js?v=20260326-29"></script>
+    <script src="donusturucu.js?v=20260326-39"></script>
   </body>
 </html>

@@ -71,6 +71,17 @@ const CONVERTER_CATEGORIES = {
     defaultFrom: "second",
     defaultTo: "minute",
   },
+  speed: {
+    units: {
+      ms: { label: "Metre / saniye (m/s)", toBase: 1 },
+      kmh: { label: "Kilometre / saat (km/h)", toBase: 0.2777777778 },
+      mph: { label: "Mil / saat (mph)", toBase: 0.44704 },
+      knot: { label: "Knot (kn)", toBase: 0.5144444444 },
+      fts: { label: "Feet / saniye (ft/s)", toBase: 0.3048 },
+    },
+    defaultFrom: "ms",
+    defaultTo: "kmh",
+  },
   power: {
     units: {
       watt: { label: "Watt (W)", toBase: 1 },

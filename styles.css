@@ -1991,7 +1991,7 @@ main > * {
 
 .top-city-name {
   font-size: 0.98rem;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.1;
 }
 
@@ -2002,14 +2002,7 @@ main > * {
 
 .top-city-card:hover,
 .top-city-card.active {
-  border-color: var(--box-border);
-  box-shadow: 0 0 0 2px var(--box-hover-soft);
-  color: var(--box-hover-text);
-}
-
-.top-city-card:hover .top-city-population,
-.top-city-card.active .top-city-population {
-  color: var(--box-hover-text);
+  box-shadow: none;
 }
 
 .category-home-card,
@@ -2020,8 +2013,31 @@ main > * {
 
 .category-home-card:hover,
 .category-home-card:focus-visible {
-  color: var(--link-hover);
+  color: var(--link-base);
   text-decoration: none;
+}
+
+.top-city-card[data-home-converter-trigger] .top-city-content {
+  grid-template-columns: 18px 1fr;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.top-city-card[data-home-converter-trigger] .top-city-content::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #011d36;
+  -webkit-mask: url("assets/change-icon.png") center / 18px 18px no-repeat;
+  mask: url("assets/change-icon.png") center / 18px 18px no-repeat;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.top-city-card[data-home-converter-trigger]:hover .top-city-content::before,
+.top-city-card[data-home-converter-trigger]:focus-visible .top-city-content::before {
+  background: #ff0000;
+  transform: scale(1.06);
 }
 
 .category-home-card .top-city-content {
@@ -3551,7 +3567,7 @@ body.nearby-venues-open {
 
   .top-city-name {
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.1;
   }
 

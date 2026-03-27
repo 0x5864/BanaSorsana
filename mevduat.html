@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Anapara, para birimi, yıllık faiz oranı ve vadeye göre mevduat getirisi hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-36" />
+  </head>
+  <body class="credit-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="finans.html">Finans</a>
+          <span>/</span>
+          <span>Mevduat</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout" aria-label="Mevduat hesaplama alanı">
+        <section class="credit-card">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Mevduat</p>
+          </div>
+
+          <div class="converter-mini-grid credit-form">
+            <label class="converter-field">
+              <span>Anapara</span>
+              <input type="text" inputmode="decimal" value="162.500,50" placeholder="Örnek: 162.500,50" data-deposit-principal />
+            </label>
+            <label class="converter-field">
+              <span>Para birimi</span>
+              <select data-deposit-currency>
+                <option value="TRY" selected>TL</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="CHF">CHF</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="SEK">SEK</option>
+                <option value="RUB">RUB</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="DKK">DKK</option>
+                <option value="NOK">NOK</option>
+                <option value="SAR">SAR</option>
+                <option value="XAU">XAU (Altın)</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Yıllık faiz oranı (%)</span>
+              <input type="text" inputmode="decimal" value="32,75" placeholder="Örnek: 32,75" data-deposit-rate />
+            </label>
+            <label class="converter-field">
+              <span>Vade</span>
+              <div class="dual-field">
+                <input type="number" min="1" step="1" value="30" data-deposit-term-value />
+                <select data-deposit-term-unit>
+                  <option value="day" selected>Gün</option>
+                  <option value="month">Ay</option>
+                  <option value="year">Yıl</option>
+                </select>
+              </div>
+            </label>
+          </div>
+
+          <p class="reel-note" data-deposit-note>
+            Brüt getiri, yıllık faiz oranının vade süresine orantılanmasıyla hesaplanır. Stopaj oranı para birimi ve vadeye göre belirlenir.
+          </p>
+
+          <div class="converter-mini-actions">
+            <button class="converter-submit" type="button" data-deposit-calculate>Hesapla</button>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card">
+              <span class="credit-result-label">Brüt getiri</span>
+              <strong class="credit-result-value" data-deposit-gross>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Stopaj</span>
+              <strong class="credit-result-value" data-deposit-tax>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Net getiri</span>
+              <strong class="credit-result-value" data-deposit-net>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Vade sonu tutar</span>
+              <strong class="credit-result-value" data-deposit-total>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Stopaj oranı</span>
+              <strong class="credit-result-value" data-deposit-tax-rate>-</strong>
+            </article>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script src="mevduat.js?v=20260327-36"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Lastik ebatı hesaplayıcısı ile lastik kodundan çap, çevre ve dönüş sayılarını hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-12" />
+  </head>
+  <body class="other-page">
+    <div class="texture"></div>
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="diger.html">Diğer</a>
+          <span>/</span>
+          <span>Lastik Ebadı Hesaplayıcısı</span>
+        </div>
+      </div>
+    </header>
+    <main class="hero other-shell">
+      <section class="other-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">Lastik Ebadı Hesaplayıcısı</p>
+        </div>
+        <div class="other-visuals" aria-label="Lastik ölçü şemaları">
+          <img class="other-visual" src="https://www.convertworld.com/static/images/cartyreA.png" alt="Lastik kodu şeması" loading="lazy" />
+          <img class="other-visual" src="https://www.convertworld.com/static/images/cartyreB.png" alt="Lastik ebatı ölçü şeması" loading="lazy" />
+        </div>
+        <div class="other-layout">
+          <div class="other-form">
+            <label class="converter-field">
+              <span>Lastik kodu</span>
+              <input type="text" value="195/70R15" placeholder="Örnek: 195/70R15 veya 195/620R16" data-tyre-code />
+            </label>
+            <p class="other-helper">
+              ISO metrik formatı: `195/70R15`
+              Japon formatı: `195/620R16`
+            </p>
+            <p class="other-error" data-tyre-error hidden>Geçerli bir lastik kodu gir.</p>
+          </div>
+          <div class="other-results" data-tyre-results></div>
+        </div>
+      </section>
+    </main>
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner"><div class="yr-footer-grid"></div><div class="yr-footer-bottom"><p>© 2026 aramabul</p></div></div>
+    </footer>
+    <script src="lastik.js?v=20260327-12"></script>
+  </body>
+</html>

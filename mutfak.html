@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Mutfak ölçü çeviricisi ile kaşık, bardak, fincan ve mililitre birimlerini hızlıca dönüştür."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-06" />
+  </head>
+  <body class="kitchen-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <span>Mutfak</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero kitchen-shell">
+      <section class="converter-mini-card kitchen-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">Mutfak Ölçü Çevirici</p>
+        </div>
+
+        <div class="converter-mini-grid kitchen-grid">
+          <label class="converter-field">
+            <span>Miktar</span>
+            <input type="text" inputmode="decimal" value="1" placeholder="Örnek: 2,5" data-kitchen-amount />
+          </label>
+
+          <label class="converter-field">
+            <span>Kaynak</span>
+            <select data-kitchen-from></select>
+          </label>
+
+          <label class="converter-field">
+            <span>Hedef</span>
+            <select data-kitchen-to></select>
+          </label>
+        </div>
+
+        <div class="converter-mini-actions kitchen-actions">
+          <button class="converter-submit converter-submit-compact" type="button" data-kitchen-swap>
+            Yer değiştir
+          </button>
+        </div>
+
+        <div class="converter-mini-result kitchen-result">
+          <div class="converter-result-value" data-kitchen-result-value>200</div>
+          <p class="converter-result-unit" data-kitchen-result-unit>Mililitre (ml)</p>
+          <p class="converter-result-meta" data-kitchen-summary>1 Su bardağı = 200 Mililitre (ml)</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner">
+        <div class="yr-footer-grid">
+          <section class="yr-footer-col">
+            <h4>aramabul'u indir!</h4>
+            <a class="store-badge" href="#" aria-label="App Store">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">App Store</span>
+            </a>
+            <a class="store-badge" href="#" aria-label="Google Play">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">Google Play</span>
+            </a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>aramabul'u keşfet</h4>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="yer-ekle.html">Yer ekle</a>
+            <a href="iletisim.html">İletişim</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Yardım mı lazım?</h4>
+            <a href="sss.html">Sıkça Sorulan Sorular</a>
+            <a href="cerez-politikasi.html">Çerez Politikası</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Kurumsal</h4>
+            <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+            <a href="kvkk.html">Kişisel Verilerin Korunması</a>
+            <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+          </section>
+        </div>
+
+        <div class="yr-footer-bottom">
+          <p>© 2026 aramabul</p>
+          <div class="yr-footer-social" aria-label="Sosyal">
+            <a href="#" aria-label="Instagram">○</a>
+            <a href="#" aria-label="Ara">◌</a>
+            <a href="#" aria-label="Dünya">◍</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="mutfak.js?v=20260327-06"></script>
+  </body>
+</html>

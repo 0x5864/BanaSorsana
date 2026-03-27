@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Kredi tutarı veya aylık taksit üzerinden taşıt kredisi ödeme planını hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-39" />
+  </head>
+  <body class="credit-page vehicle-loan-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="finans.html">Finans</a>
+          <span>/</span>
+          <span>Taşıt Kredisi</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout" aria-label="Taşıt kredisi hesaplama alanı">
+        <section class="credit-card">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Taşıt Kredisi</p>
+          </div>
+
+          <div class="converter-mini-grid credit-form">
+            <label class="converter-field need-loan-mode-field">
+              <span>Hesaplama şekli</span>
+              <select data-vehicle-loan-mode>
+                <option value="amount" selected>Kredi tutarına göre</option>
+                <option value="payment">Aylık taksite göre</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Kredi tipi</span>
+              <select data-vehicle-loan-kind>
+                <option value="individual" selected>Bireysel</option>
+                <option value="commercial">Ticari</option>
+              </select>
+            </label>
+            <label class="converter-field" data-vehicle-loan-group="amount">
+              <span>Kredi tutarı</span>
+              <input type="text" inputmode="decimal" value="350.000,00" placeholder="Örnek: 350.000,00" data-vehicle-loan-amount />
+            </label>
+            <label class="converter-field need-loan-hidden" data-vehicle-loan-group="payment">
+              <span>Aylık taksit</span>
+              <input type="text" inputmode="decimal" value="24.000,00" placeholder="Örnek: 24.000,00" data-vehicle-loan-payment-input />
+            </label>
+            <label class="converter-field">
+              <span>Vade (Ay)</span>
+              <input type="number" min="1" max="48" step="1" value="24" data-vehicle-loan-months />
+            </label>
+            <label class="converter-field">
+              <span>Aylık faiz oranı (%)</span>
+              <input type="text" inputmode="decimal" value="3,49" placeholder="Örnek: 3,49" data-vehicle-loan-rate />
+            </label>
+          </div>
+
+          <p class="reel-note" data-vehicle-loan-note>
+            Taşıt kredilerinde faiz üzerinden BSMV %5 uygulanır. KKDF oranı bireyselde %15, ticari kullanımda %0 alınır.
+          </p>
+
+          <div class="converter-mini-actions">
+            <button class="converter-submit" type="button" data-vehicle-loan-calculate>Hesapla</button>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card">
+              <span class="credit-result-label">Kredi tutarı</span>
+              <strong class="credit-result-value" data-vehicle-loan-amount-output>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Aylık taksit</span>
+              <strong class="credit-result-value" data-vehicle-loan-payment-output>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Toplam faiz</span>
+              <strong class="credit-result-value" data-vehicle-loan-interest-output>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Toplam vergi</span>
+              <strong class="credit-result-value" data-vehicle-loan-tax-output>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Toplam geri ödeme</span>
+              <strong class="credit-result-value" data-vehicle-loan-total-output>-</strong>
+            </article>
+          </aside>
+        </section>
+
+        <section class="credit-table-card" data-vehicle-loan-schedule-card>
+          <div class="credit-table-head">
+            <p class="converter-mini-label">Ödeme Tablosu</p>
+            <button class="converter-secondary" type="button" data-vehicle-loan-schedule-toggle>Ödeme tablosunu göster</button>
+          </div>
+          <div class="credit-table-wrap" data-vehicle-loan-schedule-panel hidden>
+            <table class="credit-table">
+              <thead>
+                <tr>
+                  <th>Dönem</th>
+                  <th>Taksit</th>
+                  <th>Faiz</th>
+                  <th>BSMV</th>
+                  <th>KKDF</th>
+                  <th>Anapara</th>
+                  <th>Kalan Borç</th>
+                </tr>
+              </thead>
+              <tbody data-vehicle-loan-schedule-body></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="tasit-kredisi.js?v=20260327-39"></script>
+  </body>
+</html>

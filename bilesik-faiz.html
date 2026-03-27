@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Gün sayısı ve basit faiz oranıyla yıllık bileşik faiz oranını hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-35" />
+  </head>
+  <body class="credit-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="finans.html">Finans</a>
+          <span>/</span>
+          <span>Bileşik Faiz</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout" aria-label="Bileşik faiz hesaplama alanı">
+        <section class="credit-card">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Bileşik Faiz</p>
+          </div>
+
+          <div class="converter-mini-grid credit-form">
+            <label class="converter-field">
+              <span>Gün sayısı</span>
+              <input type="number" min="1" step="1" value="287" data-compound-days />
+            </label>
+            <label class="converter-field">
+              <span>Basit faiz oranı (%)</span>
+              <input type="text" inputmode="decimal" value="70,40" placeholder="Örnek: 70,40" data-compound-simple-rate />
+            </label>
+          </div>
+
+          <p class="reel-note" data-compound-note>
+            Hesap, yıllık basit faiz oranını verilen gün sayısına göre yıllık bileşik faiz oranına dönüştürür.
+          </p>
+
+          <div class="converter-mini-actions">
+            <button class="converter-submit" type="button" data-compound-calculate>Hesapla</button>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card">
+              <span class="credit-result-label">Bileşik faiz oranı</span>
+              <strong class="credit-result-value" data-compound-rate>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Getiri çarpanı</span>
+              <strong class="credit-result-value" data-compound-multiplier>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">100 birim vade sonu</span>
+              <strong class="credit-result-value" data-compound-future>-</strong>
+            </article>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script src="bilesik-faiz.js?v=20260327-35"></script>
+  </body>
+</html>

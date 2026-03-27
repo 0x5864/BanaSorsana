@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Hicri ve miladi tarihleri iki yönlü dönüştür."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-12" />
+  </head>
+  <body class="other-page">
+    <div class="texture"></div>
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="diger.html">Diğer</a>
+          <span>/</span>
+          <span>Hicri - Miladi Tarih Hesaplama</span>
+        </div>
+      </div>
+    </header>
+    <main class="hero other-shell">
+      <section class="other-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">Hicri - Miladi Tarih Hesaplama</p>
+        </div>
+        <div class="other-layout other-layout-wide">
+          <div class="other-form">
+            <label class="converter-field">
+              <span>Takvim tipi</span>
+              <select data-calendar-type>
+                <option value="islamic">Diyanet takvimine göre</option>
+                <option value="islamic-umalqura">Arabistan hicri (Um Al Qura)</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Miladi tarih</span>
+              <input type="date" data-gregorian-date />
+            </label>
+            <div class="other-button-row">
+              <button class="converter-submit" type="button" data-convert-to-hijri>Hicri'ye Çevir</button>
+            </div>
+            <div class="other-inline-grid">
+              <label class="converter-field">
+                <span>Hicri gün</span>
+                <input type="number" min="1" max="30" step="1" data-hijri-day />
+              </label>
+              <label class="converter-field">
+                <span>Hicri ay</span>
+                <select data-hijri-month></select>
+              </label>
+              <label class="converter-field">
+                <span>Hicri yıl</span>
+                <input type="number" min="1200" max="1600" step="1" data-hijri-year />
+              </label>
+            </div>
+            <div class="other-button-row">
+              <button class="converter-submit" type="button" data-convert-to-gregorian>Miladi'ye Çevir</button>
+            </div>
+            <p class="other-error" data-calendar-error hidden>Geçerli bir tarih gir.</p>
+          </div>
+          <div class="other-results">
+            <section class="other-result-group">
+              <p class="other-result-group-title">Sonuç</p>
+              <div class="other-result-grid">
+                <article class="other-result-card"><p class="other-result-label">Miladi Tarih</p><p class="other-result-value" data-result-gregorian>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Hicri Tarih</p><p class="other-result-value" data-result-hijri>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Gün</p><p class="other-result-value" data-result-weekday>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Takvim Tipi</p><p class="other-result-value" data-result-calendar>-</p></article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner"><div class="yr-footer-grid"></div><div class="yr-footer-bottom"><p>© 2026 aramabul</p></div></div>
+    </footer>
+    <script src="hicri-miladi.js?v=20260327-12"></script>
+  </body>
+</html>

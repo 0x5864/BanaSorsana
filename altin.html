@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Altın hesaplama aracıyla gram, çeyrek, yarım, tam, ata, gremse ve ons altının güncel değeriyle işlem hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-28" />
+  </head>
+  <body class="credit-page gold-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="finans.html">Finans</a>
+          <span>/</span>
+          <span>Altın</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout" aria-label="Altın hesaplama alanı">
+        <section class="credit-card">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Altın Hesaplama</p>
+          </div>
+
+          <div class="converter-mini-grid credit-form">
+            <label class="converter-field">
+              <span>İşlem türü</span>
+              <select data-gold-operation>
+                <option value="sell" selected>Altından Paraya</option>
+                <option value="buy">Paradan Altına</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Altın türü</span>
+              <select data-gold-type>
+                <option value="gram24">24 Ayar Gram Altın</option>
+                <option value="gram22">22 Ayar Gram Altın</option>
+                <option value="gram18">18 Ayar Gram Altın</option>
+                <option value="ceyrek" selected>Çeyrek Altın</option>
+                <option value="yarim">Yarım Altın</option>
+                <option value="tam">Tam Altın</option>
+                <option value="ata">Ata Altın</option>
+                <option value="gremse">Gremse Altın</option>
+                <option value="hasGram">Has Altın Gram</option>
+                <option value="ons">Altın/Ons ($)</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span data-gold-amount-label>Miktar</span>
+              <input type="text" inputmode="decimal" value="3" placeholder="Örnek: 3" data-gold-amount />
+            </label>
+            <label class="converter-field">
+              <span>Birim</span>
+              <input type="text" value="adet" readonly data-gold-unit />
+            </label>
+          </div>
+
+          <p class="gold-note" data-gold-note>
+            Canlı fiyatlar CNBC-E altın tablosundan çekilir. Türetilen kalemlerde çeyrek veya has altın bazlı yaklaşık değer kullanılır.
+          </p>
+
+          <div class="converter-mini-actions">
+            <button class="converter-submit" type="button" data-gold-calculate>Hesapla</button>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card">
+              <span class="credit-result-label" data-gold-price-label>Kullanılan alış fiyatı</span>
+              <strong class="credit-result-value" data-gold-unit-price>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label" data-gold-result-label>Elde edilen tutar</span>
+              <strong class="credit-result-value" data-gold-result>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Kaynak</span>
+              <strong class="credit-result-value" data-gold-source>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Özet</span>
+              <strong class="credit-result-value" data-gold-summary>-</strong>
+            </article>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script src="altin.js?v=20260327-28"></script>
+  </body>
+</html>

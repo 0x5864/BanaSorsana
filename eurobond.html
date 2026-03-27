@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Eurobond hesaplama aracıyla kupon, temiz-kirli fiyat, toplam maliyet ve vadeye kadar getiriyi hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-27" />
+  </head>
+  <body class="credit-page eurobond-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="finans.html">Finans</a>
+          <span>/</span>
+          <span>Eurobond</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="credit-page-shell">
+      <section class="credit-layout" aria-label="Eurobond hesaplama alanı">
+        <section class="credit-card">
+          <div class="converter-mini-head">
+            <p class="converter-mini-label">Eurobond Hesaplama</p>
+          </div>
+
+          <div class="converter-mini-grid credit-form">
+            <label class="converter-field">
+              <span>Para birimi</span>
+              <select data-eb-currency>
+                <option value="USD" selected>USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Kupon ödemesi</span>
+              <select data-eb-frequency>
+                <option value="none">Kupon ödemesiz</option>
+                <option value="monthly">Aylık</option>
+                <option value="quarterly">3 Aylık</option>
+                <option value="semiannual" selected>6 Aylık</option>
+                <option value="yearly">Yıllık</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Yıllık kupon faiz oranı (%)</span>
+              <input type="text" inputmode="decimal" value="9,75" placeholder="Örnek: 9,75" data-eb-coupon-rate />
+            </label>
+            <label class="converter-field">
+              <span>Fiyat türü</span>
+              <select data-eb-price-mode>
+                <option value="clean" selected>Temiz fiyat</option>
+                <option value="dirty">Kirli fiyat</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span data-eb-price-label>Alış fiyatı (%)</span>
+              <input type="text" inputmode="decimal" value="104,68" placeholder="Örnek: 104,68" data-eb-price />
+            </label>
+            <label class="converter-field">
+              <span>Adet (nominal değer)</span>
+              <input type="text" inputmode="decimal" value="25000" placeholder="Örnek: 25000" data-eb-nominal />
+            </label>
+            <label class="converter-field">
+              <span>Alış tarihi</span>
+              <input type="date" value="2026-03-27" data-eb-purchase-date />
+            </label>
+            <label class="converter-field">
+              <span>Vade tarihi</span>
+              <input type="date" value="2030-03-27" data-eb-maturity-date />
+            </label>
+          </div>
+
+          <p class="eurobond-note" data-eb-note>
+            Temiz fiyat ile hesap yaparsan birikmiş faiz ayrıca eklenir. Kirli fiyatta gerçek maliyet doğrudan fiyatın içindedir.
+          </p>
+
+          <div class="converter-mini-actions">
+            <button class="converter-submit" type="button" data-eb-calculate>Hesapla</button>
+          </div>
+
+          <aside class="credit-results">
+            <article class="credit-result-card">
+              <span class="credit-result-label">Kupon başına ödeme</span>
+              <strong class="credit-result-value" data-eb-coupon-payment>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Birikmiş faiz</span>
+              <strong class="credit-result-value" data-eb-accrued-interest>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Toplam maliyet</span>
+              <strong class="credit-result-value" data-eb-total-cost>-</strong>
+            </article>
+            <article class="credit-result-card">
+              <span class="credit-result-label">Vadeye kadar getiri</span>
+              <strong class="credit-result-value" data-eb-ytm>-</strong>
+            </article>
+          </aside>
+        </section>
+
+        <section class="credit-table-card" data-eb-schedule-card>
+          <div class="credit-table-head">
+            <p class="converter-mini-label">Nakit Akışı</p>
+            <button class="converter-secondary" type="button" data-eb-schedule-toggle>
+              Nakit akışını göster
+            </button>
+          </div>
+          <div class="credit-table-wrap" data-eb-schedule-panel hidden>
+            <table class="credit-table">
+              <thead>
+                <tr>
+                  <th>Tarih</th>
+                  <th>Kupon</th>
+                  <th>Anapara</th>
+                  <th>Toplam Akış</th>
+                  <th>Kalan Gün</th>
+                </tr>
+              </thead>
+              <tbody data-eb-schedule-body></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="eurobond.js?v=20260327-27"></script>
+  </body>
+</html>

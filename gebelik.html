@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Gebelik takvimi ile son adet tarihine göre hafta, tahmini doğum tarihi ve önemli dönemleri hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-11" />
+  </head>
+  <body class="health-page">
+    <div class="texture"></div>
+
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="saglik.html">Sağlık</a>
+          <span>/</span>
+          <span>Gebelik Takvimi</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero health-shell">
+      <section class="health-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">Gebelik Takvimi</p>
+        </div>
+
+        <div class="health-layout">
+          <div class="health-form">
+            <label class="converter-field">
+              <span>Son adet tarihinin ilk günü</span>
+              <input type="date" data-pregnancy-lmp />
+            </label>
+
+            <label class="converter-field">
+              <span>Döngü uzunluğu (gün)</span>
+              <input type="number" min="21" max="40" step="1" value="28" data-pregnancy-cycle />
+            </label>
+
+            <label class="converter-field">
+              <span>Referans tarihi</span>
+              <input type="date" data-pregnancy-reference />
+            </label>
+          </div>
+
+          <div class="health-results">
+            <article class="health-result-card">
+              <p class="health-result-label">Gebelik Haftası</p>
+              <p class="health-result-value" data-pregnancy-week>0 hafta 0 gün</p>
+            </article>
+
+            <article class="health-result-card">
+              <p class="health-result-label">Tahmini Doğum Tarihi</p>
+              <p class="health-result-value" data-pregnancy-due>-</p>
+            </article>
+
+            <article class="health-result-card">
+              <p class="health-result-label">Trimester</p>
+              <p class="health-result-value" data-pregnancy-trimester>-</p>
+            </article>
+
+            <article class="health-result-card">
+              <p class="health-result-label">Bebeğin Tahmini Yaşı</p>
+              <p class="health-result-value" data-pregnancy-fetal-age>-</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="health-timeline">
+          <article class="health-milestone-card">
+            <p class="health-milestone-label">Tahmini Döllenme</p>
+            <p class="health-milestone-value" data-pregnancy-conception>-</p>
+          </article>
+
+          <article class="health-milestone-card">
+            <p class="health-milestone-label">İlk Trimester Sonu</p>
+            <p class="health-milestone-value" data-pregnancy-first-trimester>-</p>
+          </article>
+
+          <article class="health-milestone-card">
+            <p class="health-milestone-label">İkinci Trimester Sonu</p>
+            <p class="health-milestone-value" data-pregnancy-second-trimester>-</p>
+          </article>
+
+          <article class="health-milestone-card">
+            <p class="health-milestone-label">Tam Süre Başlangıcı</p>
+            <p class="health-milestone-value" data-pregnancy-full-term>-</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner">
+        <div class="yr-footer-grid">
+          <section class="yr-footer-col">
+            <h4>aramabul'u indir!</h4>
+            <a class="store-badge" href="#" aria-label="App Store">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">App Store</span>
+            </a>
+            <a class="store-badge" href="#" aria-label="Google Play">
+              <span class="store-badge-top">Hemen indirin</span>
+              <span class="store-badge-name">Google Play</span>
+            </a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>aramabul'u keşfet</h4>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="yer-ekle.html">Yer ekle</a>
+            <a href="iletisim.html">İletişim</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Yardım mı lazım?</h4>
+            <a href="sss.html">Sıkça Sorulan Sorular</a>
+            <a href="cerez-politikasi.html">Çerez Politikası</a>
+          </section>
+
+          <section class="yr-footer-col">
+            <h4>Kurumsal</h4>
+            <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+            <a href="kvkk.html">Kişisel Verilerin Korunması</a>
+            <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+          </section>
+        </div>
+
+        <div class="yr-footer-bottom">
+          <p>© 2026 aramabul</p>
+          <div class="yr-footer-social" aria-label="Sosyal">
+            <a href="#" aria-label="Instagram">○</a>
+            <a href="#" aria-label="Ara">◌</a>
+            <a href="#" aria-label="Dünya">◍</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="saglik.js?v=20260327-07"></script>
+  </body>
+</html>

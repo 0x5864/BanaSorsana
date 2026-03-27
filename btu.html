@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Klima kapasitesi için gerekli BTU değerini hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-12" />
+  </head>
+  <body class="other-page">
+    <div class="texture"></div>
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="diger.html">Diğer</a>
+          <span>/</span>
+          <span>BTU Hesaplama</span>
+        </div>
+      </div>
+    </header>
+    <main class="hero other-shell">
+      <section class="other-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">BTU Hesaplama</p>
+        </div>
+        <div class="other-layout other-layout-wide">
+          <div class="other-form">
+            <label class="converter-field">
+              <span>Bölge</span>
+              <select data-btu-region>
+                <option value="385">Marmara</option>
+                <option value="445">Akdeniz</option>
+                <option value="346">İç Anadolu</option>
+                <option value="308">Doğu Anadolu</option>
+                <option value="423">Ege</option>
+                <option value="462">Güneydoğu Anadolu</option>
+              </select>
+            </label>
+            <label class="converter-field">
+              <span>Oda alanı (m²)</span>
+              <input type="number" min="1" step="0.1" value="25" data-btu-area />
+            </label>
+            <label class="converter-field">
+              <span>Kişi sayısı</span>
+              <input type="number" min="1" step="1" value="2" data-btu-people />
+            </label>
+            <label class="converter-field">
+              <span>Aydınlatma gücü (W)</span>
+              <input type="number" min="0" step="1" value="300" data-btu-lighting />
+            </label>
+            <p class="other-helper">Hesap: `alan x bölge katsayısı + kişi x 600 + aydınlatma x 3,412`</p>
+          </div>
+          <div class="other-results">
+            <section class="other-result-group">
+              <p class="other-result-group-title">Sonuç</p>
+              <div class="other-result-grid">
+                <article class="other-result-card"><p class="other-result-label">Gerekli BTU</p><p class="other-result-value" data-btu-value>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Önerilen Klima</p><p class="other-result-value" data-btu-suggested>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Temel Alan BTU</p><p class="other-result-value" data-btu-base>-</p></article>
+                <article class="other-result-card"><p class="other-result-label">Ek Isı Yükü</p><p class="other-result-value" data-btu-extra>-</p></article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner"><div class="yr-footer-grid"></div><div class="yr-footer-bottom"><p>© 2026 aramabul</p></div></div>
+    </footer>
+    <script src="btu.js?v=20260327-12"></script>
+  </body>
+</html>

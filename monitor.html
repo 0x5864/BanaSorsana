@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f54" />
+    <title>BanaSorsana</title>
+    <meta
+      name="description"
+      content="Monitör veya televizyonun diyagonal ölçüsüne göre genişlik ve yüksekliği inç ve santimetre cinsinden hesapla."
+    />
+    <link rel="icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/hedef-lred.png" />
+    <link rel="apple-touch-icon" href="assets/hedef-lred.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260327-13" />
+  </head>
+  <body class="monitor-page">
+    <div class="texture"></div>
+    <header class="global-header-band">
+      <nav class="topbar global-topbar">
+        <a class="brand" href="index.html" aria-label="banasorsana">
+          <span class="brand-wordmark"><span class="brand-wordmark-accent">bana</span><span class="brand-wordmark-rest">sorsana</span></span>
+        </a>
+      </nav>
+      <div class="global-topline">
+        <div class="global-topline-inner">
+          <a href="index.html">Anasayfa</a>
+          <span>/</span>
+          <a href="diger.html">Diğer</a>
+          <span>/</span>
+          <span>Monitör Ölçü Hesaplama</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero monitor-shell">
+      <section class="monitor-card">
+        <div class="converter-mini-head">
+          <p class="converter-mini-label">Monitör veya Televizyon Genişlik ve Yüksekliği</p>
+        </div>
+
+        <div class="monitor-layout">
+          <div class="monitor-form">
+            <label class="converter-field">
+              <span>Ekran oranı</span>
+              <select data-monitor-ratio>
+                <option value="16:9">16 / 9 - Wide / Geniş Ekran</option>
+                <option value="4:3">4 / 3 - Kare Ekran</option>
+                <option value="21:9">21 / 9 - Ultra Geniş Ekran</option>
+              </select>
+            </label>
+
+            <label class="converter-field">
+              <span>Ölçü birimi</span>
+              <select data-monitor-unit>
+                <option value="inch">İnç</option>
+                <option value="cm">Santimetre</option>
+              </select>
+            </label>
+
+            <label class="converter-field">
+              <span>Diyagonal ölçü</span>
+              <input type="number" min="1" step="0.1" value="27" data-monitor-diagonal />
+            </label>
+          </div>
+
+          <div class="monitor-results">
+            <article class="monitor-result-card">
+              <p class="monitor-result-label">Genişlik</p>
+              <p class="monitor-result-value" data-monitor-width>-</p>
+            </article>
+
+            <article class="monitor-result-card">
+              <p class="monitor-result-label">Yükseklik</p>
+              <p class="monitor-result-value" data-monitor-height>-</p>
+            </article>
+
+            <article class="monitor-result-card">
+              <p class="monitor-result-label">Diyagonal</p>
+              <p class="monitor-result-value" data-monitor-diagonal-output>-</p>
+            </article>
+
+            <article class="monitor-result-card">
+              <p class="monitor-result-label">Ekran Alanı</p>
+              <p class="monitor-result-value" data-monitor-area>-</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="yr-footer" aria-label="Alt Bant">
+      <div class="yr-footer-inner"><div class="yr-footer-grid"></div><div class="yr-footer-bottom"><p>© 2026 aramabul</p></div></div>
+    </footer>
+
+    <script src="monitor.js?v=20260327-13"></script>
+  </body>
+</html>
